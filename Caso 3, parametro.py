@@ -25,7 +25,7 @@ u_k[n] = 0.
 #temperatura en el tiempo K +1 = dt * (k+1)
 u_km1 = u_k.copy()
 
-#Parametros del problema (hierro)
+#Parametros del problema (plata)
 
 # Decidimos poner un dt = 0.2 dado que la disipacion calorica es muy rapida
 # con dt=1 no se logra apreciar las curvas de disipacion calorica
@@ -65,7 +65,7 @@ for k in range (7000):
 	if k % 500 == 0:
 		plot(x,u_k)
 		
-title("k ={}   t={} s".format(k, k*dt))
+title("k ={}  plata  t={} s".format(k, k*dt))
 
 show()
 
