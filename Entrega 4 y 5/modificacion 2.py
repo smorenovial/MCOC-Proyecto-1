@@ -4,7 +4,7 @@ from matplotlib.pylab import *
 a = 1.          #Ancho del dominio
 b = 1.          #Largo del dominio
 Nx = 30         #Numero de intervalos en x
-Ny = 30         #Numero de intervalos en Y
+Ny = 30        #Numero de intervalos en Y
  
 dx = b / Nx     #Discretizacion espacial en X
 dy = a / Ny     #Discretizacion espacial en Y
@@ -31,10 +31,12 @@ x, y = coords(4,2)
 print "x = ", x
 print "y = ", y
  
-u_k = zeros((Nx+1,Ny+1), dtype=double)   #dtype es el tipo de datos (double, float, int32, int16...)
-u_km1 = zeros((Nx+1,Ny+1), dtype=double)   #dtype es el tipo de datos (double, float, int32, int16...)
+u_k = 20*ones((Nx+1,Ny+1), dtype=double)   #dtype es el tipo de datos (double, float, int32, int16...)
+u_km1 = 20*ones((Nx+1,Ny+1), dtype=double)   #dtype es el tipo de datos (double, float, int32, int16...)
  
-
+#CB esencial
+# u_k[0,:] = 20.
+u_k[:,1] = 20.
 
  
 #Buena idea definir funciones que hagan el codigo expresivo
@@ -50,7 +52,7 @@ def imshowbien(u):
     clim(-20, 30)
  
 #Parametros del problema (hierro)
-dt = 1.0       # s
+dt = 1.0       # hr
 K = 79.5       # m^2 / s   
 c = 450.       # J / kg C
 rho = 7800.    # kg / m^3
@@ -85,19 +87,21 @@ k = 0
 dnext_t = 1   #  20.00
 next_t = 0.
 framenum = 0
-for k in range(int32(60./dt)):
+for k in range(int32(8./dt)):
     t = dt*(k+1)
     print "k = ", k, " t = ", t
  
     #CB esencial
-  
-    u_k[:,-1] = 20 + 10* sin((2* math.pi/24)*t)
+    # u_k[0,:] = 20.
+    # u_k[-1,:] = 20.
+    u_k[:,1] = 20.
+    u_k[:,-1] = 20 + 10* sin((2* math.pi/(24)*t))
+
  
     #Loop en el espacio   i = 1 ... n-1   u_km1[0] = 0  u_km1[n] = 20
-    for i in range(1,Nx):
+    for i in range(0,Nx):
         for j in range(1,Ny):
-            #Algoritmo de diferencias finitas 2-D para difusion
- 
+            #Algoritmo de diferencias finitas 2-D para difusion      
             #Laplaciano
             nabla_u_k = (u_k[i-1,j] + u_k[i+1,j] + u_k[i,j-1] + u_k[i,j+1] - 4*u_k[i,j])/h**2
  
@@ -112,15 +116,17 @@ for k in range(int32(60./dt)):
     u_k = u_km1
  
     #CB esencial una ultima vez
-
-    u_k[:,-1] = 20 + 10* sin((2*math.pi/24)*t)
+    # u_k[0,:] = 20.
+    # u_k[-1,:] = 20.
+    u_k[:,1] = 20.
+    u_k[:,-1] = 20 + 10* sin((2*math.pi/(24))*t)
  
     print "Tmax = ", u_k.max()
  
     if t > next_t:
         figure(1)
         imshowbien(u_k)
-        title("k = {0:4.0f}   t = {1:05.2f} s".format(k, k*dt))
+        title("k = {1:0.0f}  t = {1:0.0f} hr".format(k, k*dt))
         savefig("movie/frame_{0:04.0f}.png".format(framenum))
         framenum += 1
         next_t += dnext_t
