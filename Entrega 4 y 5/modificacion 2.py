@@ -127,7 +127,7 @@ for k in range(int32(60./dt)):
         figure(1)
         imshowbien(u_k)
         title("k = {1:0.0f}  t = {1:0.0f} hr".format(k, k*dt))
-        savefig("movie/frame_{0:04.0f}.png".format(framenum))
+        savefig("movie_modificacion_2/frame_{0:04.0f}.png".format(framenum))
         framenum += 1
         next_t += dnext_t
         close(1)

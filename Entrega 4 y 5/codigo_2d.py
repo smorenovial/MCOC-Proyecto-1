@@ -123,7 +123,7 @@ for k in range(int32(5./dt)):
         figure(1)
         imshowbien(u_k)
         title("k = {0:4.0f}   t = {1:05.2f} s".format(k, k*dt))
-        savefig("movie/frame_{0:04.0f}.png".format(framenum))
+        savefig("movie_codigo_2d/frame_{0:04.0f}.png".format(framenum))
         framenum += 1
         next_t += dnext_t
         close(1)

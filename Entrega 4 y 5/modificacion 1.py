@@ -49,7 +49,7 @@ printbien(u_k)
 def imshowbien(u):
     imshow(u.T[Nx::-1,:])
     colorbar(extend='both',cmap='plasma')
-    clim(-20, 30)
+    clim(10, 30)
  
 #Parametros del problema (hierro)
 dt = 1.0       # s
@@ -124,8 +124,8 @@ for k in range(int32(60./dt)):
     if t > next_t:
         figure(1)
         imshowbien(u_k)
-        title("k = {0:4.0f}   t = {1:05.2f} s".format(k, k*dt))
-        savefig("movie/frame_{0:04.0f}.png".format(framenum))
+        title("k = {0:4.0f} t   t = {1:05.2f} dia {1:05.2f} hr {1:05.2f} m".format(k, k*dt))
+        savefig("movie_modificacion_1/frame_{0:04.0f}.png".format(framenum))
         framenum += 1
         next_t += dnext_t
         close(1)
