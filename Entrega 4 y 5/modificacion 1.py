@@ -31,10 +31,15 @@ x, y = coords(4,2)
 print "x = ", x
 print "y = ", y
  
+# Dado que la condicion inicial es que la temeperatura intera es de 20 grados celsius
+# se crea una matriz con puros numeros 20 en su interior
+
+
 u_k = 20*ones((Nx+1,Ny+1), dtype=double)   #dtype es el tipo de datos (double, float, int32, int16...)
 u_km1 = 20*ones((Nx+1,Ny+1), dtype=double)   #dtype es el tipo de datos (double, float, int32, int16...)
  
 #CB esencial
+# Se aplica las condiciones base del problema
 u_k[0,:] = 20.
 u_k[-1,:] = 20.
 
@@ -49,7 +54,7 @@ printbien(u_k)
 def imshowbien(u):
     imshow(u.T[Nx::-1,:])
     colorbar(extend='both',cmap='plasma')
-    clim(10, 30)
+    clim(10, 30)   # Segun el video la barra de temperatura va de 10 a 30 grados celsius
  
 #Parametros del problema (hierro)
 dt = 1.0       # s
@@ -84,17 +89,22 @@ k = 0
 # close(1)
  
 #Loop en el tiempo 
+# Se fija un dnext_t igual a 1 para que vaya avanzando cada un minuto
 dnext_t = 1   #  20.00
 next_t = 0.
 framenum = 0
+# Se fija un valor de 60 de tal forma de que arroje mas imagenes
 for k in range(int32(60./dt)):
     t = dt*(k+1)
     print "k = ", k, " t = ", t
  
     #CB esencial
+    # Se fijan las condiciones basales
     u_k[0,:] = 20.
     u_k[-1,:] = 20.
-    u_k[:,-1] = 20 + 10* sin((2* math.pi/24)*t)
+
+    # Se fija la funcion de variacion de calor en la cara superior 
+    u_k[:,-1] = 20 + 10* sin((2* math.pi/24)*t )
  
     #Loop en el espacio   i = 1 ... n-1   u_km1[0] = 0  u_km1[n] = 20
     for i in range(1,Nx):
@@ -115,6 +125,8 @@ for k in range(int32(60./dt)):
     u_k = u_km1
  
     #CB esencial una ultima vez
+    # Nuevamente se fijas las condiciones bases y ademas se fija la funcion de variacion
+    # de calor de la cara superior
     u_k[0,:] = 20.
     u_k[-1,:] = 20.
     u_k[:,-1] = 20 + 10* sin((2*math.pi/24)*t)
@@ -124,7 +136,8 @@ for k in range(int32(60./dt)):
     if t > next_t:
         figure(1)
         imshowbien(u_k)
-        title("k = {0:4.0f} t   t = {1:05.2f} dia {1:05.2f} hr {1:05.2f} m".format(k, k*dt))
+        title("k = {0:4.0f} t   t = {1:05.2f} m".format(k, k*dt))
+        # Se guarda en la carpeta movie_modificacion
         savefig("movie_modificacion_1/frame_{0:04.0f}.png".format(framenum))
         framenum += 1
         next_t += dnext_t

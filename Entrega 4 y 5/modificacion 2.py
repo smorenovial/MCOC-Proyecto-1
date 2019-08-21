@@ -30,12 +30,15 @@ x, y = coords(4,2)
  
 print "x = ", x
 print "y = ", y
+
+# Dado que la condicion inicial es que la temeperatura intera es de 20 grados celsius
+# se crea una matriz con puros numeros 20 en su interior
  
 u_k = 20*ones((Nx+1,Ny+1), dtype=double)   #dtype es el tipo de datos (double, float, int32, int16...)
 u_km1 = 20*ones((Nx+1,Ny+1), dtype=double)   #dtype es el tipo de datos (double, float, int32, int16...)
  
 #CB esencial
-# u_k[0,:] = 20.
+# Se aplica las condiciones base del problema
 u_k[:,1] = 20.
 
  
@@ -49,7 +52,7 @@ printbien(u_k)
 def imshowbien(u):
     imshow(u.T[Nx::-1,:])
     colorbar(extend='both',cmap='plasma')
-    clim(-20, 30)
+    clim(10, 30)
  
 #Parametros del problema (hierro)
 dt = 1.0       # hr
@@ -84,16 +87,19 @@ k = 0
 # close(1)
  
 #Loop en el tiempo 
+# Se fija un dnext_t igual a 1 para que vaya avanzando cada un minuto
+
 dnext_t = 1   #  20.00
 next_t = 0.
 framenum = 0
+# Se fija un valor de 60 de tal forma de que arroje mas imagenes
 for k in range(int32(60./dt)):
     t = dt*(k+1)
     print "k = ", k, " t = ", t
  
     #CB esencial
-    # u_k[0,:] = 20.
-    # u_k[-1,:] = 20.
+    # Se fijan las condiciones basales junto con la funcion de calor
+    # de la cara superior
     u_k[:,1] = 20.
     u_k[:,-1] = 20 + 10* sin((2* math.pi/(24)*t))
 
@@ -116,8 +122,8 @@ for k in range(int32(60./dt)):
     u_k = u_km1
  
     #CB esencial una ultima vez
-    # u_k[0,:] = 20.
-    # u_k[-1,:] = 20.
+    # Se fijan las condiciones basales junto con la funcion de calor
+    # de la cara superior
     u_k[:,1] = 20.
     u_k[:,-1] = 20 + 10* sin((2*math.pi/(24))*t)
  
