@@ -114,11 +114,11 @@ graficocentro = []
 contador=0
 lista=[]
 lista2=[]
-while contador<60:
+while contador<10:
     lista.append([1,1,1])
     contador+=1
 
-for k in range(int32(1./dt)):
+for k in range(int32(11./dt)):
     t = dt*(k+1)
     print "k = ", k, " t = ", t
  
@@ -126,10 +126,43 @@ for k in range(int32(1./dt)):
     # Se fijan las condiciones basales
     u_k[0,:,:] = 20.
     u_k[-1,:,:] = 20.
-    lista2.append(u_k[29,29,29])
+    
     print "Calor en punto [29,29,29]:", u_k[29,29,29]
     # Se fija la funcion de variacion de calor en la cara superior 
     u_k[:,-1,:] = 20 + 10* sin((2* math.pi/24)*t )
+
+    numeros=[1,2,3,4,5,6,7,8,9,10]
+
+    if k == 200: # Tiempo aproximado valor 1
+        lista2.append(u_k[29,29,29])
+
+    if k == 410: # Tiempo aproximado valor 2
+        lista2.append(u_k[29,29,29])
+
+    if k == 615: # Tiempo aproximado valor 3
+        lista2.append(u_k[29,29,29])
+
+    if k == 815: # Tiempo aproximado valor 4
+        lista2.append(u_k[29,29,29])
+
+    if k == 1015: # Tiempo aproximado valor 5
+        lista2.append(u_k[29,29,29])
+
+    if k == 1216: # Tiempo aproximado valor 6
+        lista2.append(u_k[29,29,29])
+
+    if k == 1417: # Tiempo aproximado valor 7
+        lista2.append(u_k[29,29,29])
+
+    if k == 1618: # Tiempo aproximado valor 8
+        lista2.append(u_k[29,29,29])
+
+    if k == 1819: # Tiempo aproximado valor 9
+        lista2.append(u_k[29,29,29])
+
+    if k == 2020: # Tiempo aproximado valor 10
+        lista2.append(u_k[29,29,29])
+
 
     #Loop en el espacio   i = 1 ... n-1   u_km1[0] = 0  u_km1[n] = 20
     for i in range(1,Nx):
@@ -161,8 +194,10 @@ for k in range(int32(1./dt)):
  
     print "Tmax = ", u_k.max()
  
-print "Calores del punto [29,29,29], en funcion del tiempo (k):"
+print "Calores del punto [29,29,29], en funcion del tiempo (t):"
 print lista2
+print "Tiempos t:"
+print numeros
 
 x = np.linspace(0, 10, num=11, endpoint=True)
 y = np.graficocentro(t)
