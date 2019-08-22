@@ -200,7 +200,7 @@ print "Tiempos t:"
 print numeros
 
 x = np.linspace(0, 10, num=11, endpoint=True)
-y = np.graficocentro(t)
+y = np.lista2(t)
 f = interp1d(x, y)
 f2 = interp1d(x, y, kind='cubic')
 
