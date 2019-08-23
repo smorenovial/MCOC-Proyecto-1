@@ -135,10 +135,10 @@ valoresQ=[]
 # Ciclo que va guardando en la lista valoresQ el calor generado en cada tiempo por el fraguado del hormigon
 contador=1
 while contador<=20:
-Qm= Hu * 220 * ((15.0/contador)**0.781429) * (0.781429/contador) * 0.75 * exp(-(15.0/contador)**0.781429) * exp(27.8284/8.314472*(1/(273+79)-1/(273+21)))
-Qmodificado= Qm*(10**-6)
-valoresQ.append(Qmodificado)
-contador+=1
+    Qm= Hu * 220 * ((15.0/contador)**0.781429) * (0.781429/contador) * 0.75 * exp(-(15.0/contador)**0.781429) * exp(27.8284/8.314472*(1/(273+79)-1/(273+21)))
+    Qmodificado= Qm*(10**-6)
+    valoresQ.append(Qmodificado)
+    contador+=1
 
 
 for k in range(int32(20./dt)):
