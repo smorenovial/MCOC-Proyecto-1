@@ -137,231 +137,230 @@ for k in range(int32(20./dt)):
 
 
     if k == 200: # Tiempo aproximado valor 1
-        sensor1.append(u_k[29,29,29])
-        sensor2.append(u_k[29,15,29])
-        sensor3.append(u_k[29,0,29])
-        sensor4.append(u_k[29,29,29])
-        sensor5.append(u_k[29,29,15])
-        sensor6.append(u_k[29,29,0])
-        sensor7.append(u_k[29,29,29])
-        sensor8.append(u_k[15,29,29])
-        sensor9.append(u_k[0,29,29])
-
-
+        sensor4.append(u_k[15,0,15]) #sensor 4
+        sensor5.append(u_k[15,15,15]) #sensor 5
+        sensor6.append(u_k[15,29,15]) #sensor 6
+        sensor1.append(u_k[15,0,29]) #sensor 1
+        sensor2.append(u_k[15,15,29]) #sensor 2
+        sensor3.append(u_k[15,29,29]) #sensor 3
+        sensor7.append(u_k[29,0,29]) #sensor 7
+        sensor8.append(u_k[29,15,29]) #sensor 8
+        sensor9.append(u_k[29,29,29]) #sensor 9
 
     if k == 410: # Tiempo aproximado valor 2
-        sensor1.append(u_k[29,29,29])
-        sensor2.append(u_k[29,15,29])
-        sensor3.append(u_k[29,0,29])
-        sensor4.append(u_k[29,29,29])
-        sensor5.append(u_k[29,29,15])
-        sensor6.append(u_k[29,29,0])
-        sensor7.append(u_k[29,29,29])
-        sensor8.append(u_k[15,29,29])
-        sensor9.append(u_k[0,29,29])
+        sensor4.append(u_k[15,0,15]) #sensor 4
+        sensor5.append(u_k[15,15,15]) #sensor 5
+        sensor6.append(u_k[15,29,15]) #sensor 6
+        sensor1.append(u_k[15,0,29]) #sensor 1
+        sensor2.append(u_k[15,15,29]) #sensor 2
+        sensor3.append(u_k[15,29,29]) #sensor 3
+        sensor7.append(u_k[29,0,29]) #sensor 7
+        sensor8.append(u_k[29,15,29]) #sensor 8
+        sensor9.append(u_k[29,29,29]) #sensor 9
 
     if k == 615: # Tiempo aproximado valor 3
-        sensor1.append(u_k[29,29,29])
-        sensor2.append(u_k[29,15,29])
-        sensor3.append(u_k[29,0,29])
-        sensor4.append(u_k[29,29,29])
-        sensor5.append(u_k[29,29,15])
-        sensor6.append(u_k[29,29,0])
-        sensor7.append(u_k[29,29,29])
-        sensor8.append(u_k[15,29,29])
-        sensor9.append(u_k[0,29,29])
+        sensor4.append(u_k[15,0,15]) #sensor 4
+        sensor5.append(u_k[15,15,15]) #sensor 5
+        sensor6.append(u_k[15,29,15]) #sensor 6
+        sensor1.append(u_k[15,0,29]) #sensor 1
+        sensor2.append(u_k[15,15,29]) #sensor 2
+        sensor3.append(u_k[15,29,29]) #sensor 3
+        sensor7.append(u_k[29,0,29]) #sensor 7
+        sensor8.append(u_k[29,15,29]) #sensor 8
+        sensor9.append(u_k[29,29,29]) #sensor 9
 
     if k == 815: # Tiempo aproximado valor 4
-        sensor1.append(u_k[29,29,29])
-        sensor2.append(u_k[29,15,29])
-        sensor3.append(u_k[29,0,29])
-        sensor4.append(u_k[29,29,29])
-        sensor5.append(u_k[29,29,15])
-        sensor6.append(u_k[29,29,0])
-        sensor7.append(u_k[29,29,29])
-        sensor8.append(u_k[15,29,29])
-        sensor9.append(u_k[0,29,29])
+        sensor4.append(u_k[15,0,15]) #sensor 4
+        sensor5.append(u_k[15,15,15]) #sensor 5
+        sensor6.append(u_k[15,29,15]) #sensor 6
+        sensor1.append(u_k[15,0,29]) #sensor 1
+        sensor2.append(u_k[15,15,29]) #sensor 2
+        sensor3.append(u_k[15,29,29]) #sensor 3
+        sensor7.append(u_k[29,0,29]) #sensor 7
+        sensor8.append(u_k[29,15,29]) #sensor 8
+        sensor9.append(u_k[29,29,29]) #sensor 9
 
     if k == 1015: # Tiempo aproximado valor 5
-        sensor1.append(u_k[29,29,29])
-        sensor2.append(u_k[29,15,29])
-        sensor3.append(u_k[29,0,29])
-        sensor4.append(u_k[29,29,29])
-        sensor5.append(u_k[29,29,15])
-        sensor6.append(u_k[29,29,0])
-        sensor7.append(u_k[29,29,29])
-        sensor8.append(u_k[15,29,29])
-        sensor9.append(u_k[0,29,29])
+        sensor4.append(u_k[15,0,15]) #sensor 4
+        sensor5.append(u_k[15,15,15]) #sensor 5
+        sensor6.append(u_k[15,29,15]) #sensor 6
+        sensor1.append(u_k[15,0,29]) #sensor 1
+        sensor2.append(u_k[15,15,29]) #sensor 2
+        sensor3.append(u_k[15,29,29]) #sensor 3
+        sensor7.append(u_k[29,0,29]) #sensor 7
+        sensor8.append(u_k[29,15,29]) #sensor 8
+        sensor9.append(u_k[29,29,29]) #sensor 9
 
     if k == 1216: # Tiempo aproximado valor 6
-        sensor1.append(u_k[29,29,29])
-        sensor2.append(u_k[29,15,29])
-        sensor3.append(u_k[29,0,29])
-        sensor4.append(u_k[29,29,29])
-        sensor5.append(u_k[29,29,15])
-        sensor6.append(u_k[29,29,0])
-        sensor7.append(u_k[29,29,29])
-        sensor8.append(u_k[15,29,29])
-        sensor9.append(u_k[0,29,29])
+        sensor4.append(u_k[15,0,15]) #sensor 4
+        sensor5.append(u_k[15,15,15]) #sensor 5
+        sensor6.append(u_k[15,29,15]) #sensor 6
+        sensor1.append(u_k[15,0,29]) #sensor 1
+        sensor2.append(u_k[15,15,29]) #sensor 2
+        sensor3.append(u_k[15,29,29]) #sensor 3
+        sensor7.append(u_k[29,0,29]) #sensor 7
+        sensor8.append(u_k[29,15,29]) #sensor 8
+        sensor9.append(u_k[29,29,29]) #sensor 9
 
     if k == 1417: # Tiempo aproximado valor 7
-        sensor1.append(u_k[29,29,29])
-        sensor2.append(u_k[29,15,29])
-        sensor3.append(u_k[29,0,29])
-        sensor4.append(u_k[29,29,29])
-        sensor5.append(u_k[29,29,15])
-        sensor6.append(u_k[29,29,0])
-        sensor7.append(u_k[29,29,29])
-        sensor8.append(u_k[15,29,29])
-        sensor9.append(u_k[0,29,29])
+        sensor4.append(u_k[15,0,15]) #sensor 4
+        sensor5.append(u_k[15,15,15]) #sensor 5
+        sensor6.append(u_k[15,29,15]) #sensor 6
+        sensor1.append(u_k[15,0,29]) #sensor 1
+        sensor2.append(u_k[15,15,29]) #sensor 2
+        sensor3.append(u_k[15,29,29]) #sensor 3
+        sensor7.append(u_k[29,0,29]) #sensor 7
+        sensor8.append(u_k[29,15,29]) #sensor 8
+        sensor9.append(u_k[29,29,29]) #sensor 9
 
     if k == 1618: # Tiempo aproximado valor 8
-        sensor1.append(u_k[29,29,29])
-        sensor2.append(u_k[29,15,29])
-        sensor3.append(u_k[29,0,29])
-        sensor4.append(u_k[29,29,29])
-        sensor5.append(u_k[29,29,15])
-        sensor6.append(u_k[29,29,0])
-        sensor7.append(u_k[29,29,29])
-        sensor8.append(u_k[15,29,29])
-        sensor9.append(u_k[0,29,29])
+        sensor4.append(u_k[15,0,15]) #sensor 4
+        sensor5.append(u_k[15,15,15]) #sensor 5
+        sensor6.append(u_k[15,29,15]) #sensor 6
+        sensor1.append(u_k[15,0,29]) #sensor 1
+        sensor2.append(u_k[15,15,29]) #sensor 2
+        sensor3.append(u_k[15,29,29]) #sensor 3
+        sensor7.append(u_k[29,0,29]) #sensor 7
+        sensor8.append(u_k[29,15,29]) #sensor 8
+        sensor9.append(u_k[29,29,29]) #sensor 9
 
     if k == 1819: # Tiempo aproximado valor 9
-        sensor1.append(u_k[29,29,29])
-        sensor2.append(u_k[29,15,29])
-        sensor3.append(u_k[29,0,29])
-        sensor4.append(u_k[29,29,29])
-        sensor5.append(u_k[29,29,15])
-        sensor6.append(u_k[29,29,0])
-        sensor7.append(u_k[29,29,29])
-        sensor8.append(u_k[15,29,29])
-        sensor9.append(u_k[0,29,29])
+        sensor4.append(u_k[15,0,15]) #sensor 4
+        sensor5.append(u_k[15,15,15]) #sensor 5
+        sensor6.append(u_k[15,29,15]) #sensor 6
+        sensor1.append(u_k[15,0,29]) #sensor 1
+        sensor2.append(u_k[15,15,29]) #sensor 2
+        sensor3.append(u_k[15,29,29]) #sensor 3
+        sensor7.append(u_k[29,0,29]) #sensor 7
+        sensor8.append(u_k[29,15,29]) #sensor 8
+        sensor9.append(u_k[29,29,29]) #sensor 9
 
     if k == 2020: # Tiempo aproximado valor 10
-        sensor1.append(u_k[29,29,29])
-        sensor2.append(u_k[29,15,29])
-        sensor3.append(u_k[29,0,29])
-        sensor4.append(u_k[29,29,29])
-        sensor5.append(u_k[29,29,15])
-        sensor6.append(u_k[29,29,0])
-        sensor7.append(u_k[29,29,29])
-        sensor8.append(u_k[15,29,29])
-        sensor9.append(u_k[0,29,29])
+        sensor4.append(u_k[15,0,15]) #sensor 4
+        sensor5.append(u_k[15,15,15]) #sensor 5
+        sensor6.append(u_k[15,29,15]) #sensor 6
+        sensor1.append(u_k[15,0,29]) #sensor 1
+        sensor2.append(u_k[15,15,29]) #sensor 2
+        sensor3.append(u_k[15,29,29]) #sensor 3
+        sensor7.append(u_k[29,0,29]) #sensor 7
+        sensor8.append(u_k[29,15,29]) #sensor 8
+        sensor9.append(u_k[29,29,29]) #sensor 9
+
     if k == 2221: # Tiempo aproximado valor 11
-        sensor1.append(u_k[29,29,29])
-        sensor2.append(u_k[29,15,29])
-        sensor3.append(u_k[29,0,29])
-        sensor4.append(u_k[29,29,29])
-        sensor5.append(u_k[29,29,15])
-        sensor6.append(u_k[29,29,0])
-        sensor7.append(u_k[29,29,29])
-        sensor8.append(u_k[15,29,29])
-        sensor9.append(u_k[0,29,29])
+        sensor4.append(u_k[15,0,15]) #sensor 4
+        sensor5.append(u_k[15,15,15]) #sensor 5
+        sensor6.append(u_k[15,29,15]) #sensor 6
+        sensor1.append(u_k[15,0,29]) #sensor 1
+        sensor2.append(u_k[15,15,29]) #sensor 2
+        sensor3.append(u_k[15,29,29]) #sensor 3
+        sensor7.append(u_k[29,0,29]) #sensor 7
+        sensor8.append(u_k[29,15,29]) #sensor 8
+        sensor9.append(u_k[29,29,29]) #sensor 9
 
     if k == 2422: # Tiempo aproximado valor 12
-        sensor1.append(u_k[29,29,29])
-        sensor2.append(u_k[29,15,29])
-        sensor3.append(u_k[29,0,29])
-        sensor4.append(u_k[29,29,29])
-        sensor5.append(u_k[29,29,15])
-        sensor6.append(u_k[29,29,0])
-        sensor7.append(u_k[29,29,29])
-        sensor8.append(u_k[15,29,29])
-        sensor9.append(u_k[0,29,29])
+        sensor4.append(u_k[15,0,15]) #sensor 4
+        sensor5.append(u_k[15,15,15]) #sensor 5
+        sensor6.append(u_k[15,29,15]) #sensor 6
+        sensor1.append(u_k[15,0,29]) #sensor 1
+        sensor2.append(u_k[15,15,29]) #sensor 2
+        sensor3.append(u_k[15,29,29]) #sensor 3
+        sensor7.append(u_k[29,0,29]) #sensor 7
+        sensor8.append(u_k[29,15,29]) #sensor 8
+        sensor9.append(u_k[29,29,29]) #sensor 9
 
     if k == 2623: # Tiempo aproximado valor 13
-        sensor1.append(u_k[29,29,29])
-        sensor2.append(u_k[29,15,29])
-        sensor3.append(u_k[29,0,29])
-        sensor4.append(u_k[29,29,29])
-        sensor5.append(u_k[29,29,15])
-        sensor6.append(u_k[29,29,0])
-        sensor7.append(u_k[29,29,29])
-        sensor8.append(u_k[15,29,29])
-        sensor9.append(u_k[0,29,29])
+        sensor4.append(u_k[15,0,15]) #sensor 4
+        sensor5.append(u_k[15,15,15]) #sensor 5
+        sensor6.append(u_k[15,29,15]) #sensor 6
+        sensor1.append(u_k[15,0,29]) #sensor 1
+        sensor2.append(u_k[15,15,29]) #sensor 2
+        sensor3.append(u_k[15,29,29]) #sensor 3
+        sensor7.append(u_k[29,0,29]) #sensor 7
+        sensor8.append(u_k[29,15,29]) #sensor 8
+        sensor9.append(u_k[29,29,29]) #sensor 9
 
 
     if k == 2824: # Tiempo aproximado valor 14
-        sensor1.append(u_k[29,29,29])
-        sensor2.append(u_k[29,15,29])
-        sensor3.append(u_k[29,0,29])
-        sensor4.append(u_k[29,29,29])
-        sensor5.append(u_k[29,29,15])
-        sensor6.append(u_k[29,29,0])
-        sensor7.append(u_k[29,29,29])
-        sensor8.append(u_k[15,29,29])
-        sensor9.append(u_k[0,29,29])
+        sensor4.append(u_k[15,0,15]) #sensor 4
+        sensor5.append(u_k[15,15,15]) #sensor 5
+        sensor6.append(u_k[15,29,15]) #sensor 6
+        sensor1.append(u_k[15,0,29]) #sensor 1
+        sensor2.append(u_k[15,15,29]) #sensor 2
+        sensor3.append(u_k[15,29,29]) #sensor 3
+        sensor7.append(u_k[29,0,29]) #sensor 7
+        sensor8.append(u_k[29,15,29]) #sensor 8
+        sensor9.append(u_k[29,29,29]) #sensor 9
 
 
     if k == 3025: # Tiempo aproximado valor 15
-        sensor1.append(u_k[29,29,29])
-        sensor2.append(u_k[29,15,29])
-        sensor3.append(u_k[29,0,29])
-        sensor4.append(u_k[29,29,29])
-        sensor5.append(u_k[29,29,15])
-        sensor6.append(u_k[29,29,0])
-        sensor7.append(u_k[29,29,29])
-        sensor8.append(u_k[15,29,29])
-        sensor9.append(u_k[0,29,29])
+        sensor4.append(u_k[15,0,15]) #sensor 4
+        sensor5.append(u_k[15,15,15]) #sensor 5
+        sensor6.append(u_k[15,29,15]) #sensor 6
+        sensor1.append(u_k[15,0,29]) #sensor 1
+        sensor2.append(u_k[15,15,29]) #sensor 2
+        sensor3.append(u_k[15,29,29]) #sensor 3
+        sensor7.append(u_k[29,0,29]) #sensor 7
+        sensor8.append(u_k[29,15,29]) #sensor 8
+        sensor9.append(u_k[29,29,29]) #sensor 9
 
 
     if k == 3226: # Tiempo aproximado valor 16
-        sensor1.append(u_k[29,29,29])
-        sensor2.append(u_k[29,15,29])
-        sensor3.append(u_k[29,0,29])
-        sensor4.append(u_k[29,29,29])
-        sensor5.append(u_k[29,29,15])
-        sensor6.append(u_k[29,29,0])
-        sensor7.append(u_k[29,29,29])
-        sensor8.append(u_k[15,29,29])
-        sensor9.append(u_k[0,29,29])
+        sensor4.append(u_k[15,0,15]) #sensor 4
+        sensor5.append(u_k[15,15,15]) #sensor 5
+        sensor6.append(u_k[15,29,15]) #sensor 6
+        sensor1.append(u_k[15,0,29]) #sensor 1
+        sensor2.append(u_k[15,15,29]) #sensor 2
+        sensor3.append(u_k[15,29,29]) #sensor 3
+        sensor7.append(u_k[29,0,29]) #sensor 7
+        sensor8.append(u_k[29,15,29]) #sensor 8
+        sensor9.append(u_k[29,29,29]) #sensor 9
 
     if k == 3427: # Tiempo aproximado valor 17
-        sensor1.append(u_k[29,29,29])
-        sensor2.append(u_k[29,15,29])
-        sensor3.append(u_k[29,0,29])
-        sensor4.append(u_k[29,29,29])
-        sensor5.append(u_k[29,29,15])
-        sensor6.append(u_k[29,29,0])
-        sensor7.append(u_k[29,29,29])
-        sensor8.append(u_k[15,29,29])
-        sensor9.append(u_k[0,29,29])
+        sensor4.append(u_k[15,0,15]) #sensor 4
+        sensor5.append(u_k[15,15,15]) #sensor 5
+        sensor6.append(u_k[15,29,15]) #sensor 6
+        sensor1.append(u_k[15,0,29]) #sensor 1
+        sensor2.append(u_k[15,15,29]) #sensor 2
+        sensor3.append(u_k[15,29,29]) #sensor 3
+        sensor7.append(u_k[29,0,29]) #sensor 7
+        sensor8.append(u_k[29,15,29]) #sensor 8
+        sensor9.append(u_k[29,29,29]) #sensor 9
 
 
     if k == 3628: # Tiempo aproximado valor 18
-        sensor1.append(u_k[29,29,29])
-        sensor2.append(u_k[29,15,29])
-        sensor3.append(u_k[29,0,29])
-        sensor4.append(u_k[29,29,29])
-        sensor5.append(u_k[29,29,15])
-        sensor6.append(u_k[29,29,0])
-        sensor7.append(u_k[29,29,29])
-        sensor8.append(u_k[15,29,29])
-        sensor9.append(u_k[0,29,29])
+        sensor4.append(u_k[15,0,15]) #sensor 4
+        sensor5.append(u_k[15,15,15]) #sensor 5
+        sensor6.append(u_k[15,29,15]) #sensor 6
+        sensor1.append(u_k[15,0,29]) #sensor 1
+        sensor2.append(u_k[15,15,29]) #sensor 2
+        sensor3.append(u_k[15,29,29]) #sensor 3
+        sensor7.append(u_k[29,0,29]) #sensor 7
+        sensor8.append(u_k[29,15,29]) #sensor 8
+        sensor9.append(u_k[29,29,29]) #sensor 9
 
 
     if k == 3829: # Tiempo aproximado valor 19
-        sensor1.append(u_k[29,29,29])
-        sensor2.append(u_k[29,15,29])
-        sensor3.append(u_k[29,0,29])
-        sensor4.append(u_k[29,29,29])
-        sensor5.append(u_k[29,29,15])
-        sensor6.append(u_k[29,29,0])
-        sensor7.append(u_k[29,29,29])
-        sensor8.append(u_k[15,29,29])
-        sensor9.append(u_k[0,29,29])
+        sensor4.append(u_k[15,0,15]) #sensor 4
+        sensor5.append(u_k[15,15,15]) #sensor 5
+        sensor6.append(u_k[15,29,15]) #sensor 6
+        sensor1.append(u_k[15,0,29]) #sensor 1
+        sensor2.append(u_k[15,15,29]) #sensor 2
+        sensor3.append(u_k[15,29,29]) #sensor 3
+        sensor7.append(u_k[29,0,29]) #sensor 7
+        sensor8.append(u_k[29,15,29]) #sensor 8
+        sensor9.append(u_k[29,29,29]) #sensor 9
 
 
     if k == 4030: # Tiempo aproximado valor 20
-        sensor1.append(u_k[29,29,29])
-        sensor2.append(u_k[29,15,29])
-        sensor3.append(u_k[29,0,29])
-        sensor4.append(u_k[29,29,29])
-        sensor5.append(u_k[29,29,15])
-        sensor6.append(u_k[29,29,0])
-        sensor7.append(u_k[29,29,29])
-        sensor8.append(u_k[15,29,29])
-        sensor9.append(u_k[0,29,29])
+        sensor4.append(u_k[15,0,15]) #sensor 4
+        sensor5.append(u_k[15,15,15]) #sensor 5
+        sensor6.append(u_k[15,29,15]) #sensor 6
+        sensor1.append(u_k[15,0,29]) #sensor 1
+        sensor2.append(u_k[15,15,29]) #sensor 2
+        sensor3.append(u_k[15,29,29]) #sensor 3
+        sensor7.append(u_k[29,0,29]) #sensor 7
+        sensor8.append(u_k[29,15,29]) #sensor 8
+        sensor9.append(u_k[29,29,29]) #sensor 9
 
 
 
