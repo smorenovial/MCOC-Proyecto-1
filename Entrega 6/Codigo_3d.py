@@ -50,8 +50,7 @@ u_km1 = 20*ones((Nx+1,Ny+1,Nz+1), dtype=double)  #dtype es el tipo de datos (dou
  
 #CB esencial
 # Se aplica las condiciones base del problema
-u_k[0,:,:] = 20.
-u_k[-1,:,:] = 20.
+
 
  
 #Buena idea definir funciones que hagan el codigo expresivo
@@ -67,12 +66,23 @@ def imshowbien(u):
    # clim(10, 30)   # Segun el video la barra de temperatura va de 10 a 30 grados celsius
  
 #Parametros del problema (hierro)
-dt = 1.0       # s
+
+dt = 1.       # hr
 K = 79.5       # m^2 / s   
 c = 450.       # J / kg C
 rho = 7800.    # kg / m^3
 alpha = K*dt/(c*rho*dx**2)
- 
+C3s = 121       # kg
+C2s = 44        # kg
+C3A = 26.4      # kg
+C4AF = 19.8     # kg
+SO3 = 1.1       # kg
+FreeCa = 2.75   # kg
+Mgo = 4.95      # Kg
+Slag = 0        # Kg
+Hcem = 500*C3s+260*C2s+866*C3A+420*C4AF+624*SO3+1186*FreeCa+850*Mgo
+Hu = Hcem*220 + 461*Slag + 1800 * 0.070345
+  
 # dx =  0.166666666667
 # dt = 1.0
 # alpha =  0.000815384615385
@@ -117,15 +127,24 @@ sensor7=[]
 sensor8=[]
 sensor9=[]
 numeros=[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20]
+valoresQ=[]
+
+contador=1
+while contador<=20:
+Qm= Hu * 220 * ((15.0/contador)**0.781429) * (0.781429/contador) * 0.75 * exp(-(15.0/contador)**0.781429) * exp(27.8284/8.314472*(1/(273+79)-1/(273+21)))
+Qmodificado= Qm*(10**-6)
+valoresQ.append(Qmodificado)
+contador+=1
+
 
 for k in range(int32(20./dt)):
     t = dt*(k+1)
     print "k = ", k, " t = ", t
- 
+
+    
     #CB esencial
     # Se fijan las condiciones basales
-    u_k[0,:,:] = 20.
-    u_k[-1,:,:] = 20.
+
     
 
     # Se fija la funcion de variacion de calor en la cara superior 
@@ -137,6 +156,8 @@ for k in range(int32(20./dt)):
 
 
     if k == 200: # Tiempo aproximado valor 1
+        matrizq= valoresQ[0]*ones((Nx+1,Ny+1,Nz+1), dtype=double)
+        u_k+= matrizq
         sensor4.append(u_k[15,0,15]) #sensor 4
         sensor5.append(u_k[15,15,15]) #sensor 5
         sensor6.append(u_k[15,29,15]) #sensor 6
@@ -146,8 +167,13 @@ for k in range(int32(20./dt)):
         sensor7.append(u_k[29,0,29]) #sensor 7
         sensor8.append(u_k[29,15,29]) #sensor 8
         sensor9.append(u_k[29,29,29]) #sensor 9
+
+
 
     if k == 410: # Tiempo aproximado valor 2
+        matrizq= valoresQ[0]*ones((Nx+1,Ny+1,Nz+1), dtype=double)
+        matrizq1= valoresQ[1]*ones((Nx+1,Ny+1,Nz+1), dtype=double)
+        u_k=u_k+matrizq1-matrizq
         sensor4.append(u_k[15,0,15]) #sensor 4
         sensor5.append(u_k[15,15,15]) #sensor 5
         sensor6.append(u_k[15,29,15]) #sensor 6
@@ -157,8 +183,10 @@ for k in range(int32(20./dt)):
         sensor7.append(u_k[29,0,29]) #sensor 7
         sensor8.append(u_k[29,15,29]) #sensor 8
         sensor9.append(u_k[29,29,29]) #sensor 9
-
     if k == 615: # Tiempo aproximado valor 3
+        matrizq= valoresQ[1]*ones((Nx+1,Ny+1,Nz+1), dtype=double)
+        matrizq1= valoresQ[2]*ones((Nx+1,Ny+1,Nz+1), dtype=double)
+        u_k=u_k+matrizq1-matrizq
         sensor4.append(u_k[15,0,15]) #sensor 4
         sensor5.append(u_k[15,15,15]) #sensor 5
         sensor6.append(u_k[15,29,15]) #sensor 6
@@ -170,6 +198,9 @@ for k in range(int32(20./dt)):
         sensor9.append(u_k[29,29,29]) #sensor 9
 
     if k == 815: # Tiempo aproximado valor 4
+        matrizq= valoresQ[2]*ones((Nx+1,Ny+1,Nz+1), dtype=double)
+        matrizq1= valoresQ[3]*ones((Nx+1,Ny+1,Nz+1), dtype=double)
+        u_k=u_k+matrizq1-matrizq
         sensor4.append(u_k[15,0,15]) #sensor 4
         sensor5.append(u_k[15,15,15]) #sensor 5
         sensor6.append(u_k[15,29,15]) #sensor 6
@@ -181,6 +212,9 @@ for k in range(int32(20./dt)):
         sensor9.append(u_k[29,29,29]) #sensor 9
 
     if k == 1015: # Tiempo aproximado valor 5
+        matrizq= valoresQ[3]*ones((Nx+1,Ny+1,Nz+1), dtype=double)
+        matrizq1= valoresQ[4]*ones((Nx+1,Ny+1,Nz+1), dtype=double)
+        u_k=u_k+matrizq1-matrizq
         sensor4.append(u_k[15,0,15]) #sensor 4
         sensor5.append(u_k[15,15,15]) #sensor 5
         sensor6.append(u_k[15,29,15]) #sensor 6
@@ -192,6 +226,9 @@ for k in range(int32(20./dt)):
         sensor9.append(u_k[29,29,29]) #sensor 9
 
     if k == 1216: # Tiempo aproximado valor 6
+        matrizq= valoresQ[4]*ones((Nx+1,Ny+1,Nz+1), dtype=double)
+        matrizq1= valoresQ[5]*ones((Nx+1,Ny+1,Nz+1), dtype=double)
+        u_k=u_k+matrizq1-matrizq
         sensor4.append(u_k[15,0,15]) #sensor 4
         sensor5.append(u_k[15,15,15]) #sensor 5
         sensor6.append(u_k[15,29,15]) #sensor 6
@@ -203,6 +240,9 @@ for k in range(int32(20./dt)):
         sensor9.append(u_k[29,29,29]) #sensor 9
 
     if k == 1417: # Tiempo aproximado valor 7
+        matrizq= valoresQ[5]*ones((Nx+1,Ny+1,Nz+1), dtype=double)
+        matrizq1= valoresQ[6]*ones((Nx+1,Ny+1,Nz+1), dtype=double)
+        u_k=u_k+matrizq1-matrizq
         sensor4.append(u_k[15,0,15]) #sensor 4
         sensor5.append(u_k[15,15,15]) #sensor 5
         sensor6.append(u_k[15,29,15]) #sensor 6
@@ -214,6 +254,9 @@ for k in range(int32(20./dt)):
         sensor9.append(u_k[29,29,29]) #sensor 9
 
     if k == 1618: # Tiempo aproximado valor 8
+        matrizq= valoresQ[6]*ones((Nx+1,Ny+1,Nz+1), dtype=double)
+        matrizq1= valoresQ[7]*ones((Nx+1,Ny+1,Nz+1), dtype=double)
+        u_k=u_k+matrizq1-matrizq
         sensor4.append(u_k[15,0,15]) #sensor 4
         sensor5.append(u_k[15,15,15]) #sensor 5
         sensor6.append(u_k[15,29,15]) #sensor 6
@@ -224,7 +267,11 @@ for k in range(int32(20./dt)):
         sensor8.append(u_k[29,15,29]) #sensor 8
         sensor9.append(u_k[29,29,29]) #sensor 9
 
+
     if k == 1819: # Tiempo aproximado valor 9
+        matrizq= valoresQ[7]*ones((Nx+1,Ny+1,Nz+1), dtype=double)
+        matrizq1= valoresQ[8]*ones((Nx+1,Ny+1,Nz+1), dtype=double)
+        u_k=u_k+matrizq1-matrizq
         sensor4.append(u_k[15,0,15]) #sensor 4
         sensor5.append(u_k[15,15,15]) #sensor 5
         sensor6.append(u_k[15,29,15]) #sensor 6
@@ -236,6 +283,9 @@ for k in range(int32(20./dt)):
         sensor9.append(u_k[29,29,29]) #sensor 9
 
     if k == 2020: # Tiempo aproximado valor 10
+        matrizq= valoresQ[8]*ones((Nx+1,Ny+1,Nz+1), dtype=double)
+        matrizq1= valoresQ[9]*ones((Nx+1,Ny+1,Nz+1), dtype=double)
+        u_k=u_k+matrizq1-matrizq
         sensor4.append(u_k[15,0,15]) #sensor 4
         sensor5.append(u_k[15,15,15]) #sensor 5
         sensor6.append(u_k[15,29,15]) #sensor 6
@@ -247,6 +297,9 @@ for k in range(int32(20./dt)):
         sensor9.append(u_k[29,29,29]) #sensor 9
 
     if k == 2221: # Tiempo aproximado valor 11
+        matrizq= valoresQ[9]*ones((Nx+1,Ny+1,Nz+1), dtype=double)
+        matrizq1= valoresQ[10]*ones((Nx+1,Ny+1,Nz+1), dtype=double)
+        u_k=u_k+matrizq1-matrizq
         sensor4.append(u_k[15,0,15]) #sensor 4
         sensor5.append(u_k[15,15,15]) #sensor 5
         sensor6.append(u_k[15,29,15]) #sensor 6
@@ -258,6 +311,9 @@ for k in range(int32(20./dt)):
         sensor9.append(u_k[29,29,29]) #sensor 9
 
     if k == 2422: # Tiempo aproximado valor 12
+        matrizq= valoresQ[10]*ones((Nx+1,Ny+1,Nz+1), dtype=double)
+        matrizq1= valoresQ[11]*ones((Nx+1,Ny+1,Nz+1), dtype=double)
+        u_k=u_k+matrizq1-matrizq
         sensor4.append(u_k[15,0,15]) #sensor 4
         sensor5.append(u_k[15,15,15]) #sensor 5
         sensor6.append(u_k[15,29,15]) #sensor 6
@@ -269,6 +325,9 @@ for k in range(int32(20./dt)):
         sensor9.append(u_k[29,29,29]) #sensor 9
 
     if k == 2623: # Tiempo aproximado valor 13
+        matrizq= valoresQ[11]*ones((Nx+1,Ny+1,Nz+1), dtype=double)
+        matrizq1= valoresQ[12]*ones((Nx+1,Ny+1,Nz+1), dtype=double)
+        u_k=u_k+matrizq1-matrizq
         sensor4.append(u_k[15,0,15]) #sensor 4
         sensor5.append(u_k[15,15,15]) #sensor 5
         sensor6.append(u_k[15,29,15]) #sensor 6
@@ -281,6 +340,9 @@ for k in range(int32(20./dt)):
 
 
     if k == 2824: # Tiempo aproximado valor 14
+        matrizq= valoresQ[12]*ones((Nx+1,Ny+1,Nz+1), dtype=double)
+        matrizq1= valoresQ[13]*ones((Nx+1,Ny+1,Nz+1), dtype=double)
+        u_k=u_k+matrizq1-matrizq
         sensor4.append(u_k[15,0,15]) #sensor 4
         sensor5.append(u_k[15,15,15]) #sensor 5
         sensor6.append(u_k[15,29,15]) #sensor 6
@@ -293,6 +355,9 @@ for k in range(int32(20./dt)):
 
 
     if k == 3025: # Tiempo aproximado valor 15
+        matrizq= valoresQ[13]*ones((Nx+1,Ny+1,Nz+1), dtype=double)
+        matrizq1= valoresQ[14]*ones((Nx+1,Ny+1,Nz+1), dtype=double)
+        u_k=u_k+matrizq1-matrizq
         sensor4.append(u_k[15,0,15]) #sensor 4
         sensor5.append(u_k[15,15,15]) #sensor 5
         sensor6.append(u_k[15,29,15]) #sensor 6
@@ -305,6 +370,9 @@ for k in range(int32(20./dt)):
 
 
     if k == 3226: # Tiempo aproximado valor 16
+        matrizq= valoresQ[14]*ones((Nx+1,Ny+1,Nz+1), dtype=double)
+        matrizq1= valoresQ[15]*ones((Nx+1,Ny+1,Nz+1), dtype=double)
+        u_k=u_k+matrizq1-matrizq
         sensor4.append(u_k[15,0,15]) #sensor 4
         sensor5.append(u_k[15,15,15]) #sensor 5
         sensor6.append(u_k[15,29,15]) #sensor 6
@@ -316,6 +384,9 @@ for k in range(int32(20./dt)):
         sensor9.append(u_k[29,29,29]) #sensor 9
 
     if k == 3427: # Tiempo aproximado valor 17
+        matrizq= valoresQ[15]*ones((Nx+1,Ny+1,Nz+1), dtype=double)
+        matrizq1= valoresQ[16]*ones((Nx+1,Ny+1,Nz+1), dtype=double)
+        u_k=u_k+matrizq1-matrizq
         sensor4.append(u_k[15,0,15]) #sensor 4
         sensor5.append(u_k[15,15,15]) #sensor 5
         sensor6.append(u_k[15,29,15]) #sensor 6
@@ -328,6 +399,9 @@ for k in range(int32(20./dt)):
 
 
     if k == 3628: # Tiempo aproximado valor 18
+        matrizq= valoresQ[16]*ones((Nx+1,Ny+1,Nz+1), dtype=double)
+        matrizq1= valoresQ[17]*ones((Nx+1,Ny+1,Nz+1), dtype=double)
+        u_k=u_k+matrizq1-matrizq
         sensor4.append(u_k[15,0,15]) #sensor 4
         sensor5.append(u_k[15,15,15]) #sensor 5
         sensor6.append(u_k[15,29,15]) #sensor 6
@@ -340,6 +414,9 @@ for k in range(int32(20./dt)):
 
 
     if k == 3829: # Tiempo aproximado valor 19
+        matrizq= valoresQ[17]*ones((Nx+1,Ny+1,Nz+1), dtype=double)
+        matrizq1= valoresQ[18]*ones((Nx+1,Ny+1,Nz+1), dtype=double)
+        u_k=u_k+matrizq1-matrizq
         sensor4.append(u_k[15,0,15]) #sensor 4
         sensor5.append(u_k[15,15,15]) #sensor 5
         sensor6.append(u_k[15,29,15]) #sensor 6
@@ -352,6 +429,9 @@ for k in range(int32(20./dt)):
 
 
     if k == 4030: # Tiempo aproximado valor 20
+        matrizq= valoresQ[18]*ones((Nx+1,Ny+1,Nz+1), dtype=double)
+        matrizq1= valoresQ[19]*ones((Nx+1,Ny+1,Nz+1), dtype=double)
+        u_k=u_k+matrizq1-matrizq
         sensor4.append(u_k[15,0,15]) #sensor 4
         sensor5.append(u_k[15,15,15]) #sensor 5
         sensor6.append(u_k[15,29,15]) #sensor 6
@@ -388,8 +468,7 @@ for k in range(int32(20./dt)):
     #CB esencial una ultima vez
     # Nuevamente se fijas las condiciones bases y ademas se fija la funcion de variacion
     # de calor de la cara superior
-    u_k[0,:,:] = 20.
-    u_k[-1,:,:] = 20.
+
     u_k[:,-1,:] = 20 + 10* sin((2*math.pi/24)*t)
  
     print "Tmax = ", u_k.max()
@@ -408,7 +487,7 @@ print sensor5
 print sensor6
 print sensor7
 print sensor8
-print sensor9
+print sensor9   
 
 print len(sensor1)
 # Se imprime el grafico
@@ -423,8 +502,20 @@ pyplot.plot(numeros,sensor7)
 pyplot.plot(numeros,sensor8)
 pyplot.plot(numeros,sensor9)
 
-#plt.title("Variacion de calor v/s Tiempo")
-#plt.xlabel("Tiempo")
-#plt.ylabel("Calor")
+pyplot.title("Variacion de calor v/s Tiempo")
+pyplot.xlabel("Tiempo")
+pyplot.ylabel("Calor")
+
+pyplot.plot(sensor1, label = "Sensor 1")
+pyplot.plot(sensor2, label = "Sensor 2")
+pyplot.plot(sensor3, label = "Sensor 3")
+pyplot.plot(sensor4, label = "Sensor 4")
+pyplot.plot(sensor5, label = "Sensor 5")
+pyplot.plot(sensor6, label = "Sensor 6")
+pyplot.plot(sensor7, label = "Sensor 7")
+pyplot.plot(sensor8, label = "Sensor 8")
+pyplot.plot(sensor9, label = "Sensor 9")
+
+pyplot.legend(loc="upper left")
 
 pyplot.show()
