@@ -117,6 +117,7 @@ graficocentro = []
 # Se fija un valor de 60 de tal forma de que arroje mas imagenes
 
 
+# Se crean las listas que contendran la temperatura de cada sensor en un punto en especifico, en cada tiempo
 sensor1=[]
 sensor2=[]
 sensor3=[]
@@ -126,9 +127,12 @@ sensor6=[]
 sensor7=[]
 sensor8=[]
 sensor9=[]
+# lista de cantidad de tiempos que se toman para graficar
 numeros=[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20]
+# lista para guardar cada uno de los valores de Q dependiendo del tiempo 
 valoresQ=[]
 
+# Ciclo que va guardando en la lista valoresQ el calor generado en cada tiempo por el fraguado del hormigon
 contador=1
 while contador<=20:
 Qm= Hu * 220 * ((15.0/contador)**0.781429) * (0.781429/contador) * 0.75 * exp(-(15.0/contador)**0.781429) * exp(27.8284/8.314472*(1/(273+79)-1/(273+21)))
@@ -152,7 +156,9 @@ for k in range(int32(20./dt)):
 
 
 
-    # Cada 202 veces que avanza k, sube en 1 el valor de t aproximadamente
+    # Cada 202 veces que avanza k, sube en 1 el valor de t aproximadamente, por lo tanto
+    # se asocia cada tiempo de 1 a 20 en este caso, con un k especifico
+
 
 
     if k == 200: # Tiempo aproximado valor 1
@@ -171,6 +177,8 @@ for k in range(int32(20./dt)):
 
 
     if k == 410: # Tiempo aproximado valor 2
+
+    # Se le suma a la matriz u_k la diferencia de calor generado entre un tiempo y otro
         matrizq= valoresQ[0]*ones((Nx+1,Ny+1,Nz+1), dtype=double)
         matrizq1= valoresQ[1]*ones((Nx+1,Ny+1,Nz+1), dtype=double)
         u_k=u_k+matrizq1-matrizq
@@ -183,7 +191,9 @@ for k in range(int32(20./dt)):
         sensor7.append(u_k[29,0,29]) #sensor 7
         sensor8.append(u_k[29,15,29]) #sensor 8
         sensor9.append(u_k[29,29,29]) #sensor 9
+
     if k == 615: # Tiempo aproximado valor 3
+    # Se le suma a la matriz u_k la diferencia de calor generado entre un tiempo y otro
         matrizq= valoresQ[1]*ones((Nx+1,Ny+1,Nz+1), dtype=double)
         matrizq1= valoresQ[2]*ones((Nx+1,Ny+1,Nz+1), dtype=double)
         u_k=u_k+matrizq1-matrizq
@@ -198,6 +208,7 @@ for k in range(int32(20./dt)):
         sensor9.append(u_k[29,29,29]) #sensor 9
 
     if k == 815: # Tiempo aproximado valor 4
+    # Se le suma a la matriz u_k la diferencia de calor generado entre un tiempo y otro
         matrizq= valoresQ[2]*ones((Nx+1,Ny+1,Nz+1), dtype=double)
         matrizq1= valoresQ[3]*ones((Nx+1,Ny+1,Nz+1), dtype=double)
         u_k=u_k+matrizq1-matrizq
@@ -212,6 +223,7 @@ for k in range(int32(20./dt)):
         sensor9.append(u_k[29,29,29]) #sensor 9
 
     if k == 1015: # Tiempo aproximado valor 5
+    # Se le suma a la matriz u_k la diferencia de calor generado entre un tiempo y otro
         matrizq= valoresQ[3]*ones((Nx+1,Ny+1,Nz+1), dtype=double)
         matrizq1= valoresQ[4]*ones((Nx+1,Ny+1,Nz+1), dtype=double)
         u_k=u_k+matrizq1-matrizq
@@ -226,6 +238,7 @@ for k in range(int32(20./dt)):
         sensor9.append(u_k[29,29,29]) #sensor 9
 
     if k == 1216: # Tiempo aproximado valor 6
+    # Se le suma a la matriz u_k la diferencia de calor generado entre un tiempo y otro
         matrizq= valoresQ[4]*ones((Nx+1,Ny+1,Nz+1), dtype=double)
         matrizq1= valoresQ[5]*ones((Nx+1,Ny+1,Nz+1), dtype=double)
         u_k=u_k+matrizq1-matrizq
@@ -240,6 +253,7 @@ for k in range(int32(20./dt)):
         sensor9.append(u_k[29,29,29]) #sensor 9
 
     if k == 1417: # Tiempo aproximado valor 7
+    # Se le suma a la matriz u_k la diferencia de calor generado entre un tiempo y otro
         matrizq= valoresQ[5]*ones((Nx+1,Ny+1,Nz+1), dtype=double)
         matrizq1= valoresQ[6]*ones((Nx+1,Ny+1,Nz+1), dtype=double)
         u_k=u_k+matrizq1-matrizq
@@ -254,6 +268,7 @@ for k in range(int32(20./dt)):
         sensor9.append(u_k[29,29,29]) #sensor 9
 
     if k == 1618: # Tiempo aproximado valor 8
+    # Se le suma a la matriz u_k la diferencia de calor generado entre un tiempo y otro
         matrizq= valoresQ[6]*ones((Nx+1,Ny+1,Nz+1), dtype=double)
         matrizq1= valoresQ[7]*ones((Nx+1,Ny+1,Nz+1), dtype=double)
         u_k=u_k+matrizq1-matrizq
@@ -269,6 +284,7 @@ for k in range(int32(20./dt)):
 
 
     if k == 1819: # Tiempo aproximado valor 9
+    # Se le suma a la matriz u_k la diferencia de calor generado entre un tiempo y otro
         matrizq= valoresQ[7]*ones((Nx+1,Ny+1,Nz+1), dtype=double)
         matrizq1= valoresQ[8]*ones((Nx+1,Ny+1,Nz+1), dtype=double)
         u_k=u_k+matrizq1-matrizq
@@ -283,6 +299,7 @@ for k in range(int32(20./dt)):
         sensor9.append(u_k[29,29,29]) #sensor 9
 
     if k == 2020: # Tiempo aproximado valor 10
+    # Se le suma a la matriz u_k la diferencia de calor generado entre un tiempo y otro
         matrizq= valoresQ[8]*ones((Nx+1,Ny+1,Nz+1), dtype=double)
         matrizq1= valoresQ[9]*ones((Nx+1,Ny+1,Nz+1), dtype=double)
         u_k=u_k+matrizq1-matrizq
@@ -297,6 +314,7 @@ for k in range(int32(20./dt)):
         sensor9.append(u_k[29,29,29]) #sensor 9
 
     if k == 2221: # Tiempo aproximado valor 11
+    # Se le suma a la matriz u_k la diferencia de calor generado entre un tiempo y otro
         matrizq= valoresQ[9]*ones((Nx+1,Ny+1,Nz+1), dtype=double)
         matrizq1= valoresQ[10]*ones((Nx+1,Ny+1,Nz+1), dtype=double)
         u_k=u_k+matrizq1-matrizq
@@ -311,6 +329,7 @@ for k in range(int32(20./dt)):
         sensor9.append(u_k[29,29,29]) #sensor 9
 
     if k == 2422: # Tiempo aproximado valor 12
+    # Se le suma a la matriz u_k la diferencia de calor generado entre un tiempo y otro
         matrizq= valoresQ[10]*ones((Nx+1,Ny+1,Nz+1), dtype=double)
         matrizq1= valoresQ[11]*ones((Nx+1,Ny+1,Nz+1), dtype=double)
         u_k=u_k+matrizq1-matrizq
@@ -325,6 +344,7 @@ for k in range(int32(20./dt)):
         sensor9.append(u_k[29,29,29]) #sensor 9
 
     if k == 2623: # Tiempo aproximado valor 13
+    # Se le suma a la matriz u_k la diferencia de calor generado entre un tiempo y otro
         matrizq= valoresQ[11]*ones((Nx+1,Ny+1,Nz+1), dtype=double)
         matrizq1= valoresQ[12]*ones((Nx+1,Ny+1,Nz+1), dtype=double)
         u_k=u_k+matrizq1-matrizq
@@ -340,6 +360,7 @@ for k in range(int32(20./dt)):
 
 
     if k == 2824: # Tiempo aproximado valor 14
+    # Se le suma a la matriz u_k la diferencia de calor generado entre un tiempo y otro
         matrizq= valoresQ[12]*ones((Nx+1,Ny+1,Nz+1), dtype=double)
         matrizq1= valoresQ[13]*ones((Nx+1,Ny+1,Nz+1), dtype=double)
         u_k=u_k+matrizq1-matrizq
@@ -355,6 +376,7 @@ for k in range(int32(20./dt)):
 
 
     if k == 3025: # Tiempo aproximado valor 15
+    # Se le suma a la matriz u_k la diferencia de calor generado entre un tiempo y otro
         matrizq= valoresQ[13]*ones((Nx+1,Ny+1,Nz+1), dtype=double)
         matrizq1= valoresQ[14]*ones((Nx+1,Ny+1,Nz+1), dtype=double)
         u_k=u_k+matrizq1-matrizq
@@ -370,6 +392,7 @@ for k in range(int32(20./dt)):
 
 
     if k == 3226: # Tiempo aproximado valor 16
+    # Se le suma a la matriz u_k la diferencia de calor generado entre un tiempo y otro
         matrizq= valoresQ[14]*ones((Nx+1,Ny+1,Nz+1), dtype=double)
         matrizq1= valoresQ[15]*ones((Nx+1,Ny+1,Nz+1), dtype=double)
         u_k=u_k+matrizq1-matrizq
@@ -384,6 +407,7 @@ for k in range(int32(20./dt)):
         sensor9.append(u_k[29,29,29]) #sensor 9
 
     if k == 3427: # Tiempo aproximado valor 17
+    # Se le suma a la matriz u_k la diferencia de calor generado entre un tiempo y otro
         matrizq= valoresQ[15]*ones((Nx+1,Ny+1,Nz+1), dtype=double)
         matrizq1= valoresQ[16]*ones((Nx+1,Ny+1,Nz+1), dtype=double)
         u_k=u_k+matrizq1-matrizq
@@ -399,6 +423,7 @@ for k in range(int32(20./dt)):
 
 
     if k == 3628: # Tiempo aproximado valor 18
+    # Se le suma a la matriz u_k la diferencia de calor generado entre un tiempo y otro
         matrizq= valoresQ[16]*ones((Nx+1,Ny+1,Nz+1), dtype=double)
         matrizq1= valoresQ[17]*ones((Nx+1,Ny+1,Nz+1), dtype=double)
         u_k=u_k+matrizq1-matrizq
@@ -414,6 +439,7 @@ for k in range(int32(20./dt)):
 
 
     if k == 3829: # Tiempo aproximado valor 19
+    # Se le suma a la matriz u_k la diferencia de calor generado entre un tiempo y otro
         matrizq= valoresQ[17]*ones((Nx+1,Ny+1,Nz+1), dtype=double)
         matrizq1= valoresQ[18]*ones((Nx+1,Ny+1,Nz+1), dtype=double)
         u_k=u_k+matrizq1-matrizq
@@ -429,6 +455,7 @@ for k in range(int32(20./dt)):
 
 
     if k == 4030: # Tiempo aproximado valor 20
+    # Se le suma a la matriz u_k la diferencia de calor generado entre un tiempo y otro
         matrizq= valoresQ[18]*ones((Nx+1,Ny+1,Nz+1), dtype=double)
         matrizq1= valoresQ[19]*ones((Nx+1,Ny+1,Nz+1), dtype=double)
         u_k=u_k+matrizq1-matrizq
@@ -443,7 +470,7 @@ for k in range(int32(20./dt)):
         sensor9.append(u_k[29,29,29]) #sensor 9
 
 
-
+    # Se acondicina el for para 3 dimensiones
     #Loop en el espacio   i = 1 ... n-1   u_km1[0] = 0  u_km1[n] = 20
     for i in range(1,Nx):
         for j in range(1,Ny):
@@ -479,20 +506,10 @@ for k in range(int32(20./dt)):
 #print numeros
 
 
-print sensor1
-print sensor2
-print sensor3
-print sensor4
-print sensor5
-print sensor6
-print sensor7
-print sensor8
-print sensor9   
+# Se imprime el grafico con cada una de las curvas que muestran la variacion de calor en el tiempo
+# en cada uno de los sensores (posicion)
 
-print len(sensor1)
-# Se imprime el grafico
 pyplot.plot(numeros,sensor1)
-
 pyplot.plot(numeros,sensor2)
 pyplot.plot(numeros,sensor3)
 pyplot.plot(numeros,sensor4)
@@ -502,10 +519,12 @@ pyplot.plot(numeros,sensor7)
 pyplot.plot(numeros,sensor8)
 pyplot.plot(numeros,sensor9)
 
+# Titulo del grafico y nombre de los ejes
 pyplot.title("Variacion de calor v/s Tiempo")
 pyplot.xlabel("Tiempo")
 pyplot.ylabel("Calor")
 
+# Label de cada una de las curvas
 pyplot.plot(sensor1, label = "Sensor 1")
 pyplot.plot(sensor2, label = "Sensor 2")
 pyplot.plot(sensor3, label = "Sensor 3")
@@ -516,6 +535,7 @@ pyplot.plot(sensor7, label = "Sensor 7")
 pyplot.plot(sensor8, label = "Sensor 8")
 pyplot.plot(sensor9, label = "Sensor 9")
 
+# Ubicacion de las leyendas
 pyplot.legend(loc="upper left")
 
 pyplot.show()
