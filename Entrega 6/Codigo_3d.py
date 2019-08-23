@@ -1,4 +1,5 @@
 from matplotlib.pylab import *
+from matplotlib import pyplot
 from scipy.interpolate import interp1d
 import numpy as np
 import math
@@ -115,9 +116,9 @@ sensor6=[]
 sensor7=[]
 sensor8=[]
 sensor9=[]
+numeros=[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20]
 
-
-for k in range(int32(10./dt)):
+for k in range(int32(20./dt)):
     t = dt*(k+1)
     print "k = ", k, " t = ", t
  
@@ -130,20 +131,239 @@ for k in range(int32(10./dt)):
     # Se fija la funcion de variacion de calor en la cara superior 
     u_k[:,-1,:] = 20 + 10* sin((2* math.pi/24)*t )
 
-    numeros=[1,2,3,4,5,6,7,8,9,10]
 
 
     # Cada 202 veces que avanza k, sube en 1 el valor de t aproximadamente
-    if k % 202: 
-        sensor1.append(u_k[29,29,29]) # Sensores 7
-        sensor2.append(u_k[29,15,29]) # Sensores 8
-        sensor3.append(u_k[29,0,29]) # Sensores 9
-        sensor4.append(u_k[15,15,15])
-        sensor5.append(u_k[15,29,15])
-        sensor6.append(u_k[15,0,15])
-        #sensor7.append(u_k[29,29,29])
-        #sensor8.append(u_k[29,15,29])
-        #sensor9.append(u_k[29,0,29])
+
+
+    if k == 200: # Tiempo aproximado valor 1
+        sensor1.append(u_k[29,29,29])
+        sensor2.append(u_k[29,15,29])
+        sensor3.append(u_k[29,0,29])
+        sensor4.append(u_k[29,29,29])
+        sensor5.append(u_k[29,29,15])
+        sensor6.append(u_k[29,29,0])
+        sensor7.append(u_k[29,29,29])
+        sensor8.append(u_k[15,29,29])
+        sensor9.append(u_k[0,29,29])
+
+
+
+    if k == 410: # Tiempo aproximado valor 2
+        sensor1.append(u_k[29,29,29])
+        sensor2.append(u_k[29,15,29])
+        sensor3.append(u_k[29,0,29])
+        sensor4.append(u_k[29,29,29])
+        sensor5.append(u_k[29,29,15])
+        sensor6.append(u_k[29,29,0])
+        sensor7.append(u_k[29,29,29])
+        sensor8.append(u_k[15,29,29])
+        sensor9.append(u_k[0,29,29])
+
+    if k == 615: # Tiempo aproximado valor 3
+        sensor1.append(u_k[29,29,29])
+        sensor2.append(u_k[29,15,29])
+        sensor3.append(u_k[29,0,29])
+        sensor4.append(u_k[29,29,29])
+        sensor5.append(u_k[29,29,15])
+        sensor6.append(u_k[29,29,0])
+        sensor7.append(u_k[29,29,29])
+        sensor8.append(u_k[15,29,29])
+        sensor9.append(u_k[0,29,29])
+
+    if k == 815: # Tiempo aproximado valor 4
+        sensor1.append(u_k[29,29,29])
+        sensor2.append(u_k[29,15,29])
+        sensor3.append(u_k[29,0,29])
+        sensor4.append(u_k[29,29,29])
+        sensor5.append(u_k[29,29,15])
+        sensor6.append(u_k[29,29,0])
+        sensor7.append(u_k[29,29,29])
+        sensor8.append(u_k[15,29,29])
+        sensor9.append(u_k[0,29,29])
+
+    if k == 1015: # Tiempo aproximado valor 5
+        sensor1.append(u_k[29,29,29])
+        sensor2.append(u_k[29,15,29])
+        sensor3.append(u_k[29,0,29])
+        sensor4.append(u_k[29,29,29])
+        sensor5.append(u_k[29,29,15])
+        sensor6.append(u_k[29,29,0])
+        sensor7.append(u_k[29,29,29])
+        sensor8.append(u_k[15,29,29])
+        sensor9.append(u_k[0,29,29])
+
+    if k == 1216: # Tiempo aproximado valor 6
+        sensor1.append(u_k[29,29,29])
+        sensor2.append(u_k[29,15,29])
+        sensor3.append(u_k[29,0,29])
+        sensor4.append(u_k[29,29,29])
+        sensor5.append(u_k[29,29,15])
+        sensor6.append(u_k[29,29,0])
+        sensor7.append(u_k[29,29,29])
+        sensor8.append(u_k[15,29,29])
+        sensor9.append(u_k[0,29,29])
+
+    if k == 1417: # Tiempo aproximado valor 7
+        sensor1.append(u_k[29,29,29])
+        sensor2.append(u_k[29,15,29])
+        sensor3.append(u_k[29,0,29])
+        sensor4.append(u_k[29,29,29])
+        sensor5.append(u_k[29,29,15])
+        sensor6.append(u_k[29,29,0])
+        sensor7.append(u_k[29,29,29])
+        sensor8.append(u_k[15,29,29])
+        sensor9.append(u_k[0,29,29])
+
+    if k == 1618: # Tiempo aproximado valor 8
+        sensor1.append(u_k[29,29,29])
+        sensor2.append(u_k[29,15,29])
+        sensor3.append(u_k[29,0,29])
+        sensor4.append(u_k[29,29,29])
+        sensor5.append(u_k[29,29,15])
+        sensor6.append(u_k[29,29,0])
+        sensor7.append(u_k[29,29,29])
+        sensor8.append(u_k[15,29,29])
+        sensor9.append(u_k[0,29,29])
+
+    if k == 1819: # Tiempo aproximado valor 9
+        sensor1.append(u_k[29,29,29])
+        sensor2.append(u_k[29,15,29])
+        sensor3.append(u_k[29,0,29])
+        sensor4.append(u_k[29,29,29])
+        sensor5.append(u_k[29,29,15])
+        sensor6.append(u_k[29,29,0])
+        sensor7.append(u_k[29,29,29])
+        sensor8.append(u_k[15,29,29])
+        sensor9.append(u_k[0,29,29])
+
+    if k == 2020: # Tiempo aproximado valor 10
+        sensor1.append(u_k[29,29,29])
+        sensor2.append(u_k[29,15,29])
+        sensor3.append(u_k[29,0,29])
+        sensor4.append(u_k[29,29,29])
+        sensor5.append(u_k[29,29,15])
+        sensor6.append(u_k[29,29,0])
+        sensor7.append(u_k[29,29,29])
+        sensor8.append(u_k[15,29,29])
+        sensor9.append(u_k[0,29,29])
+    if k == 2221: # Tiempo aproximado valor 11
+        sensor1.append(u_k[29,29,29])
+        sensor2.append(u_k[29,15,29])
+        sensor3.append(u_k[29,0,29])
+        sensor4.append(u_k[29,29,29])
+        sensor5.append(u_k[29,29,15])
+        sensor6.append(u_k[29,29,0])
+        sensor7.append(u_k[29,29,29])
+        sensor8.append(u_k[15,29,29])
+        sensor9.append(u_k[0,29,29])
+
+    if k == 2422: # Tiempo aproximado valor 12
+        sensor1.append(u_k[29,29,29])
+        sensor2.append(u_k[29,15,29])
+        sensor3.append(u_k[29,0,29])
+        sensor4.append(u_k[29,29,29])
+        sensor5.append(u_k[29,29,15])
+        sensor6.append(u_k[29,29,0])
+        sensor7.append(u_k[29,29,29])
+        sensor8.append(u_k[15,29,29])
+        sensor9.append(u_k[0,29,29])
+
+    if k == 2623: # Tiempo aproximado valor 13
+        sensor1.append(u_k[29,29,29])
+        sensor2.append(u_k[29,15,29])
+        sensor3.append(u_k[29,0,29])
+        sensor4.append(u_k[29,29,29])
+        sensor5.append(u_k[29,29,15])
+        sensor6.append(u_k[29,29,0])
+        sensor7.append(u_k[29,29,29])
+        sensor8.append(u_k[15,29,29])
+        sensor9.append(u_k[0,29,29])
+
+
+    if k == 2824: # Tiempo aproximado valor 14
+        sensor1.append(u_k[29,29,29])
+        sensor2.append(u_k[29,15,29])
+        sensor3.append(u_k[29,0,29])
+        sensor4.append(u_k[29,29,29])
+        sensor5.append(u_k[29,29,15])
+        sensor6.append(u_k[29,29,0])
+        sensor7.append(u_k[29,29,29])
+        sensor8.append(u_k[15,29,29])
+        sensor9.append(u_k[0,29,29])
+
+
+    if k == 3025: # Tiempo aproximado valor 15
+        sensor1.append(u_k[29,29,29])
+        sensor2.append(u_k[29,15,29])
+        sensor3.append(u_k[29,0,29])
+        sensor4.append(u_k[29,29,29])
+        sensor5.append(u_k[29,29,15])
+        sensor6.append(u_k[29,29,0])
+        sensor7.append(u_k[29,29,29])
+        sensor8.append(u_k[15,29,29])
+        sensor9.append(u_k[0,29,29])
+
+
+    if k == 3226: # Tiempo aproximado valor 16
+        sensor1.append(u_k[29,29,29])
+        sensor2.append(u_k[29,15,29])
+        sensor3.append(u_k[29,0,29])
+        sensor4.append(u_k[29,29,29])
+        sensor5.append(u_k[29,29,15])
+        sensor6.append(u_k[29,29,0])
+        sensor7.append(u_k[29,29,29])
+        sensor8.append(u_k[15,29,29])
+        sensor9.append(u_k[0,29,29])
+
+    if k == 3427: # Tiempo aproximado valor 17
+        sensor1.append(u_k[29,29,29])
+        sensor2.append(u_k[29,15,29])
+        sensor3.append(u_k[29,0,29])
+        sensor4.append(u_k[29,29,29])
+        sensor5.append(u_k[29,29,15])
+        sensor6.append(u_k[29,29,0])
+        sensor7.append(u_k[29,29,29])
+        sensor8.append(u_k[15,29,29])
+        sensor9.append(u_k[0,29,29])
+
+
+    if k == 3628: # Tiempo aproximado valor 18
+        sensor1.append(u_k[29,29,29])
+        sensor2.append(u_k[29,15,29])
+        sensor3.append(u_k[29,0,29])
+        sensor4.append(u_k[29,29,29])
+        sensor5.append(u_k[29,29,15])
+        sensor6.append(u_k[29,29,0])
+        sensor7.append(u_k[29,29,29])
+        sensor8.append(u_k[15,29,29])
+        sensor9.append(u_k[0,29,29])
+
+
+    if k == 3829: # Tiempo aproximado valor 19
+        sensor1.append(u_k[29,29,29])
+        sensor2.append(u_k[29,15,29])
+        sensor3.append(u_k[29,0,29])
+        sensor4.append(u_k[29,29,29])
+        sensor5.append(u_k[29,29,15])
+        sensor6.append(u_k[29,29,0])
+        sensor7.append(u_k[29,29,29])
+        sensor8.append(u_k[15,29,29])
+        sensor9.append(u_k[0,29,29])
+
+
+    if k == 4030: # Tiempo aproximado valor 20
+        sensor1.append(u_k[29,29,29])
+        sensor2.append(u_k[29,15,29])
+        sensor3.append(u_k[29,0,29])
+        sensor4.append(u_k[29,29,29])
+        sensor5.append(u_k[29,29,15])
+        sensor6.append(u_k[29,29,0])
+        sensor7.append(u_k[29,29,29])
+        sensor8.append(u_k[15,29,29])
+        sensor9.append(u_k[0,29,29])
+
+
 
     #Loop en el espacio   i = 1 ... n-1   u_km1[0] = 0  u_km1[n] = 20
     for i in range(1,Nx):
@@ -175,27 +395,37 @@ for k in range(int32(10./dt)):
  
     print "Tmax = ", u_k.max()
  
-#print "Calores del punto [29,29,29], en funcion del tiempo (t):"
+#print "Calores del punto [29,29, 29], en funcion del tiempo (t):"
 #print sensor1
 #print "Tiempos t:"
 #print numeros
 
+
+print sensor1
+print sensor2
+print sensor3
+print sensor4
+print sensor5
+print sensor6
+print sensor7
+print sensor8
+print sensor9
+
+print len(sensor1)
 # Se imprime el grafico
-plt.plot(numeros,sensor1)
-plt.plot(numeros,sensor2)
-plt.plot(numeros,sensor3)
-plt.plot(numeros,sensor4)
-plt.plot(numeros,sensor5)
-plt.plot(numeros,sensor6)
-#plt.plot(numeros,sensor7)
-#plt.plot(numeros,sensor8)
-#plt.plot(numeros,sensor9)
+pyplot.plot(numeros,sensor1)
 
-plt.title("Variacion de calor v/s Tiempo")
-plt.xlabel("Tiempo")
-plt.ylabel("Calor")
+pyplot.plot(numeros,sensor2)
+pyplot.plot(numeros,sensor3)
+pyplot.plot(numeros,sensor4)
+pyplot.plot(numeros,sensor5)
+pyplot.plot(numeros,sensor6)
+pyplot.plot(numeros,sensor7)
+pyplot.plot(numeros,sensor8)
+pyplot.plot(numeros,sensor9)
 
-plt.show()
+#plt.title("Variacion de calor v/s Tiempo")
+#plt.xlabel("Tiempo")
+#plt.ylabel("Calor")
 
-
-
+pyplot.show()
